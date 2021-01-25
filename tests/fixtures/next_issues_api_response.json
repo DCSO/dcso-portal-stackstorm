@@ -1,0 +1,77 @@
+{
+  "issues": {
+    "edges": [
+      {
+        "cursor": "eyJz88F1ZW888SI6N30=",
+        "node": {
+          "id": "ee777777-023e-477c-abe5-07774aaf42bf",
+          "reference": "",
+          "summary": "test_summary",
+          "status": "OPEN",
+          "alertsFrom": null,
+          "alertsTill": null,
+          "taxonomy": {
+            "urgency": [
+              {
+                "key": "killchain",
+                "value": "initial_access"
+              },
+              {
+                "key": "scope",
+                "value": "multiple_normal_accounts_andor_endpoints"
+              }
+            ],
+            "impact": [
+              {
+                "key": "threat_actor_type",
+                "value": "opportunistic"
+              },
+              {
+                "key": "availability_impact",
+                "value": "disruption"
+              }
+            ]
+          },
+          "recommendation": "",
+          "alertClassification": {
+            "alertLabels": [
+              "attck_group:-",
+              "attck_software:test_software"
+            ]
+          }
+        }
+      },
+      {
+        "cursor": "eyJzZXF1ZW5jZSI6N30=",
+        "node": {
+          "id": "477377a6-0777-4d90-b777-756177976aa0",
+          "reference": "",
+          "summary": "test_summary",
+          "status": "OPEN",
+          "alertsFrom": null,
+          "alertsTill": null,
+          "taxonomy": {
+            "urgency": [
+              {
+                "key": "killchain",
+                "value": "initial_access"
+              }
+            ],
+            "impact": []
+          },
+          "recommendation": "",
+          "alertClassification": {
+            "alertLabels": [
+              "attck_group:-",
+              "attck_software:S5454549"
+            ]
+          }
+        }
+      }
+    ],
+    "pageInfo": {
+      "hasNextPage": false,
+      "endCursor": "eyJzZX77777ZSI6N30="
+    }
+  }
+}

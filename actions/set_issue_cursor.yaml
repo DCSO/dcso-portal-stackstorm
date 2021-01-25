@@ -1,0 +1,12 @@
+---
+name: set_issue_cursor
+runner_type: python-script
+description: set the issue cursor to given value. Please use only for debugging or re-sync.
+enabled: true
+entry_point: set_issue_cursor.py
+parameters:
+  value:
+    type: string
+    description: a valid cursor, to start from beginning, leave it empty
+    required: false
+    position: 1

@@ -1,0 +1,41 @@
+{
+  "status": "SUCCESS",
+  "node": {
+    "id": "e67e7a17-023e-427c-ab75-04774aaf77bf",
+    "reference": "",
+    "summary": "test summary",
+    "status": "OPEN",
+    "alertsFrom": null,
+    "alertsTill": null,
+    "taxonomy": {
+      "urgency": [
+        {
+          "key": "killchain",
+          "value": "initial_access"
+        },
+        {
+          "key": "scope",
+          "value": "multiple_normal_accounts_andor_endpoints"
+        }
+      ],
+      "impact": [
+        {
+          "key": "threat_actor_type",
+          "value": "opportunistic"
+        },
+        {
+          "key": "availability_impact",
+          "value": "disruption"
+        }
+      ]
+    },
+    "recommendation": "",
+    "alertClassification": {
+      "alertLabels": [
+        "attck_group:-",
+        "attck_software:test_software"
+      ]
+    },
+    "portalUrl": "https://portal.dcso.de/tdh/issues/e67e7a17-023e-427c-ab75-04774aaf77bf"
+  }
+}

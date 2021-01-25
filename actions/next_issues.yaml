@@ -1,0 +1,12 @@
+---
+name: next_issues
+runner_type: python-script
+description: returns next issues, saves cursor internally.
+enabled: true
+entry_point: next_issues.py
+parameters:
+  number_of_issues:
+    type: integer
+    description: number of issues to query
+    required: true
+    position: 1

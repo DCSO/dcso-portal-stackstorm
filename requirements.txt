@@ -1,0 +1,3 @@
+# Place any required python libraries here. Will be installed into a pack specific virtualenv
+st2client==3.3.0
+dcso-portal-python-sdk==1.0.0b1

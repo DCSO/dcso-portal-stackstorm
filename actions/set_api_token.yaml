@@ -1,0 +1,13 @@
+---
+name: set_api_token
+runner_type: python-script
+description: set the api token to given value. Api tokens can be generated through the Portal.
+enabled: true
+entry_point: set_api_token.py
+parameters:
+  value:
+    type: string
+    description: a valid api token
+    required: true
+    position: 1
+    secret: true

@@ -1,0 +1,7 @@
+---
+  api_uri:
+    description: "The URI of the GraphQL API"
+    type: "string"
+    secret: false
+    required: true
+    default: "https://api.dcso.de/graphql"

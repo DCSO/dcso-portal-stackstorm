@@ -1,0 +1,13 @@
+---
+ref: dcso_portal
+name: DCSO Portal
+description: DCSO Portal StackStorm Package
+version: 1.0.0-beta1
+author: DCSO GmbH
+email: portal-support@dcso.de
+python_versions:
+  - "3"
+contributors:
+  - "Christoph Frei <christoph.frei@dcso.de>"
+  - "Christopher Kilian <christopher.kilian@dcso.de>"
+

@@ -1,0 +1,6 @@
+---
+name: next_issue
+runner_type: python-script
+description: returns next issue, saves cursor internally.
+enabled: true
+entry_point: next_issue.py

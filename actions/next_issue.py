@@ -4,7 +4,7 @@ from dcso.portal import PortalException
 from st2client.models import KeyValuePair
 from st2common.runners.base_action import Action
 
-from lib.helpers import get_issue_url, get_key_client, get_api_client
+from lib.helpers import get_issue_url, get_key_client, get_api_client, convert_timestamps_to_str, get_query_string
 
 
 class NextIssue(Action):
@@ -20,31 +20,11 @@ class NextIssue(Action):
 
         client = get_api_client(api_url=api_url, api_token=api_token)
 
-        q = """query($cursor: Cursor)
-               {
-                 issues(first:1 after:$cursor)  {
-                   edges {
-                     cursor
-                     node {
-                       id
-                       reference
-                       summary
-                       status
-                       ...on AlertIssue {
-                         alertsFrom
-                         alertsTill
-                         taxonomy { urgency { key value } impact { key value }}
-                         recommendation
-                         alertClassification { alertLabels }
-                       }
-                     }
-                   }
-                 }
-               }
-            """
+        q = get_query_string()
 
         variables = {
-            'cursor': cursor
+            'cursor': cursor,
+            'amount': 1
         }
 
         result = {"status": "FAILED", "node": None}
@@ -53,11 +33,12 @@ class NextIssue(Action):
             issues = response["issues"]["edges"]
             result["status"] = "SUCCESS"
             if len(issues) > 0:
-                new_cursor = issues[0]["cursor"]
+                page_info = response["issues"].get("pageInfo")
+                new_cursor = page_info.get("endCursor")
                 key_client.keys.update(KeyValuePair(name='dcso.issue_cursor', value=new_cursor))
-                result["node"] = issues[0]["node"]
-                issue_url = get_issue_url(api_client=client, issue_id=issues[0]["node"]["id"])
-                result["node"]["portalUrl"] = issue_url
+                result["node"] = convert_timestamps_to_str(issues[0]["node"])
+                issue_url = get_issue_url(client, issues[0]["node"]["id"], self.config.get("portal_uri"))
+                result["node"]["portalURL"] = issue_url
         except PortalException as exc:
             result["error"] = str(exc)
 

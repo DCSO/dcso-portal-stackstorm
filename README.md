@@ -4,7 +4,10 @@ Copyright (c) 2021, DCSO Deutsche Cyber-Sicherheitsorganisation GmbH
 ## Install as StackStorm pack
 
 In the st2 command line run
-```st2 pack install https://github.com/DCSO/dcso-portal-stackstorm.git```
+``` shell
+st2 pack install https://github.com/DCSO/dcso-portal-stackstorm.git
+```
+Login to stackstorm, navigate to `Packs`, select `DCSO Portal` and configure `api_uri` and `portal_uri`
 
 ## Development using Docker
 

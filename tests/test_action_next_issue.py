@@ -28,7 +28,7 @@ class NextIssueActionTestCase(BaseActionTestCase):
     @patch.object(ResourceManager, 'update')
     @patch.object(ResourceManager, 'get_by_name')
     def test_next_issue(self, mock_get_key, mock_update_key, mock_api_url, mock_graphql):
-        action = self.get_action_instance()
+        action = self.get_action_instance(config={'portal_uri': 'https://test.url'})
         # mock key_client/key-value store
         mock_get_key.return_value = self.key_client
         mock_update_key.return_value = None

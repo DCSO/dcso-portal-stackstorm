@@ -5,3 +5,8 @@
     secret: false
     required: true
     default: "https://api.dcso.de/graphql"
+  portal_uri:
+    description: "The URI to the DCSO Portal"
+    type: "string"
+    secret: false
+    required: true

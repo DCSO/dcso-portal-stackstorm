@@ -1,41 +1,56 @@
 {
   "status": "SUCCESS",
   "node": {
-    "id": "e67e7a17-023e-427c-ab75-04774aaf77bf",
-    "reference": "",
-    "summary": "test summary",
-    "status": "OPEN",
-    "alertsFrom": null,
-    "alertsTill": null,
-    "taxonomy": {
-      "urgency": [
-        {
-          "key": "killchain",
-          "value": "initial_access"
-        },
-        {
-          "key": "scope",
-          "value": "multiple_normal_accounts_andor_endpoints"
-        }
-      ],
-      "impact": [
-        {
-          "key": "threat_actor_type",
-          "value": "opportunistic"
-        },
-        {
-          "key": "availability_impact",
-          "value": "disruption"
-        }
-      ]
-    },
+    "id": "aaaaaaba-971e-456b-9d9a-54406edc45d9",
+    "reference": "automatic-TEST---S0199",
+    "organizationID": "TEST",
+    "summary": "issue ",
+    "activeFrom": null,
+    "activeTill": null,
+    "alertsFrom": "2021-03-16T11:49:37.725168Z",
+    "alertsTill": "2021-03-21T16:17:13.004464Z",
     "recommendation": "",
-    "alertClassification": {
-      "alertLabels": [
-        "attck_group:-",
-        "attck_software:test_software"
-      ]
-    },
-    "portalUrl": "https://portal.dcso.de/tdh/issues/e67e7a17-023e-427c-ab75-04774aaf77bf"
+    "taxonomy": null,
+    "sightings": [
+      {
+        "source": "testervices-archive.test",
+        "sourceData": "Hostname",
+        "attack": {
+          "name": "malicious",
+          "description": "Test operation targets test speakers",
+          "urls": [
+            "https://abc.test.com/test/12345"
+          ]
+        }
+      },
+      {
+        "source": "107.foo.80.68",
+        "sourceData": "IP",
+        "attack": {
+          "name": "clean",
+          "description": "Clean",
+          "urls": [
+            "-"
+          ]
+        }
+      },
+      {
+        "source": "DCSO TIE-BLF Possibly bad HTTP host: testervices-archive.test",
+        "sourceData": "",
+        "attack": null
+      },
+      {
+        "source": "172.foo.70.32",
+        "sourceData": "",
+        "attack": null
+      },
+      {
+        "source": "http://testervices-archive.test/image01.jpg",
+        "sourceData": "",
+        "attack": null
+      }
+    ],
+    "affectedEntities": [],
+    "portalURL": "https://test.url/tdh/issues/aaaaaaba-971e-456b-9d9a-54406edc45d9"
   }
 }

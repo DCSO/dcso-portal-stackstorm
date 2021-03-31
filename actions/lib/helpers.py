@@ -84,7 +84,7 @@ def get_query_string():
                              urls
                            }
                          }
-                         affectedEntities {
+                         newestAffectedEntities(limit: 1000) {
                            ...on SensorEntity {
                              id
                              value

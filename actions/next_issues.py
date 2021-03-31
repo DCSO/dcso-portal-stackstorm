@@ -4,7 +4,7 @@ from dcso.portal import PortalException
 from st2client.models import KeyValuePair
 from st2common.runners.base_action import Action
 
-from lib.helpers import get_issue_url, get_key_client, get_api_client
+from lib.helpers import get_issue_url, get_key_client, get_api_client, convert_timestamps_to_str, get_query_string
 
 
 class NextIssues(Action):
@@ -20,39 +20,13 @@ class NextIssues(Action):
 
         client = get_api_client(api_url=api_url, api_token=api_token)
 
-        q = """query($cursor: Cursor, $amount: Int)
-               {
-                 issues(first:$amount after:$cursor)  {
-                   edges {
-                     cursor
-                     node {
-                       id
-                       reference
-                       summary
-                       status
-                       ...on AlertIssue {
-                         alertsFrom
-                         alertsTill
-                         taxonomy { urgency { key value } impact { key value }}
-                         recommendation
-                         alertClassification { alertLabels }
-                       }
-                     }
-                   }
-                    pageInfo{
-                    hasNextPage
-                    endCursor
-                 }
-                 }
-               }
-            """
+        q = get_query_string()
 
         variables = {
             'cursor': cursor,
             'amount': number_of_issues
         }
 
-        results = []
         try:
             response = client.execute_graphql_dict(query=q, variables=variables)
             issues = response["issues"]["edges"]
@@ -60,16 +34,16 @@ class NextIssues(Action):
                 results = {"status": "SUCCESS", "nodes": []}
                 for issue in issues:
                     # append issue to list
-                    issue_url = get_issue_url(api_client=client, issue_id=issue["node"]["id"])
-                    issue["node"]["portalUrl"] = issue_url
-                    results["nodes"].append(issue["node"])
+                    issue_url = get_issue_url(client, issue["node"]["id"], self.config.get("portal_uri"))
+                    issue["node"]["portalURL"] = issue_url
+                    results["nodes"].append(convert_timestamps_to_str(issue["node"]))
                 # update Cursor
                 page_info = response["issues"].get("pageInfo")
                 new_cursor = page_info.get("endCursor")
                 key_client.keys.update(KeyValuePair(name='dcso.issue_cursor', value=new_cursor))
             else:
-                results.append({"status": "SUCCESS", "nodes": None})
+                results = {"status": "SUCCESS", "nodes": None}
         except PortalException as exc:
-            results.append({"status": "FAILED", "nodes": None, "error": str(exc)})
+            results = {"status": "FAILED", "nodes": None, "error": str(exc)}
 
         return results

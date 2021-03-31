@@ -2,76 +2,117 @@
   "issues": {
     "edges": [
       {
-        "cursor": "eyJz88F1ZW888SI6N30=",
         "node": {
-          "id": "ee777777-023e-477c-abe5-07774aaf42bf",
-          "reference": "",
-          "summary": "test_summary",
-          "status": "OPEN",
-          "alertsFrom": null,
-          "alertsTill": null,
-          "taxonomy": {
-            "urgency": [
-              {
-                "key": "killchain",
-                "value": "initial_access"
-              },
-              {
-                "key": "scope",
-                "value": "multiple_normal_accounts_andor_endpoints"
-              }
-            ],
-            "impact": [
-              {
-                "key": "threat_actor_type",
-                "value": "opportunistic"
-              },
-              {
-                "key": "availability_impact",
-                "value": "disruption"
-              }
-            ]
-          },
+          "id": "aaaaaaba-971e-456b-9d9a-54406edc45d9",
+          "reference": "automatic-TEST---S0199",
+          "organizationID": "TEST",
+          "summary": "issue ",
+          "activeFrom": null,
+          "activeTill": null,
+          "alertsFrom": "2021-03-16T11:49:37.725168Z",
+          "alertsTill": "2021-03-21T16:17:13.004464Z",
           "recommendation": "",
-          "alertClassification": {
-            "alertLabels": [
-              "attck_group:-",
-              "attck_software:test_software"
-            ]
-          }
+          "taxonomy": null,
+          "sightings": [
+            {
+              "source": "testervices-archive.test",
+              "sourceData": "Hostname",
+              "attack": {
+                "name": "malicious",
+                "description": "Test operation targets test speakers",
+                "urls": [
+                  "https://abc.test.com/test/12345"
+                ]
+              }
+            },
+            {
+              "source": "107.foo.80.68",
+              "sourceData": "IP",
+              "attack": {
+                "name": "clean",
+                "description": "Clean",
+                "urls": [
+                  "-"
+                ]
+              }
+            },
+            {
+              "source": "DCSO TIE-BLF Possibly bad HTTP host: testervices-archive.test",
+              "sourceData": "",
+              "attack": null
+            },
+            {
+              "source": "172.foo.70.32",
+              "sourceData": "",
+              "attack": null
+            },
+            {
+              "source": "http://testervices-archive.test/image01.jpg",
+              "sourceData": "",
+              "attack": null
+            }
+          ],
+          "affectedEntities": []
         }
       },
       {
-        "cursor": "eyJzZXF1ZW5jZSI6N30=",
         "node": {
-          "id": "477377a6-0777-4d90-b777-756177976aa0",
-          "reference": "",
-          "summary": "test_summary",
-          "status": "OPEN",
-          "alertsFrom": null,
-          "alertsTill": null,
-          "taxonomy": {
-            "urgency": [
-              {
-                "key": "killchain",
-                "value": "initial_access"
-              }
-            ],
-            "impact": []
-          },
+          "id": "aaaaaaba-971e-456b-9d9a-54406edc45d9",
+          "reference": "automatic-TEST---S0199",
+          "organizationID": "TEST",
+          "summary": "issue ",
+          "activeFrom": null,
+          "activeTill": null,
+          "alertsFrom": "2021-03-16T11:49:37.725168Z",
+          "alertsTill": "2021-03-21T16:17:13.004464Z",
           "recommendation": "",
-          "alertClassification": {
-            "alertLabels": [
-              "attck_group:-",
-              "attck_software:S5454549"
-            ]
-          }
+          "taxonomy": null,
+          "sightings": [
+            {
+              "source": "testervices-archive.test",
+              "sourceData": "Hostname",
+              "attack": {
+                "name": "malicious",
+                "description": "Test operation targets test speakers",
+                "urls": [
+                  "https://abc.test.com/test/12345"
+                ]
+              }
+            },
+            {
+              "source": "107.foo.80.68",
+              "sourceData": "IP",
+              "attack": {
+                "name": "clean",
+                "description": "Clean",
+                "urls": [
+                  "-"
+                ]
+              }
+            },
+            {
+              "source": "DCSO TIE-BLF Possibly bad HTTP host: testervices-archive.test",
+              "sourceData": "",
+              "attack": null
+            },
+            {
+              "source": "172.foo.70.32",
+              "sourceData": "",
+              "attack": null
+            },
+            {
+              "source": "http://testervices-archive.test/image01.jpg",
+              "sourceData": "",
+              "attack": null
+            }
+          ],
+          "affectedEntities": []
         }
       }
     ],
     "pageInfo": {
       "hasNextPage": false,
-      "endCursor": "eyJzZX77777ZSI6N30="
+      "endCursor": "eyJfaCI6ImRhMzlhM2VlNWU2YjRiMGQzMjU1YmZlZjk1NjAxODkwYWZkODA3MDkiLCJzZXF1ZW5jZSI6Mn0="
     }
   }
 }

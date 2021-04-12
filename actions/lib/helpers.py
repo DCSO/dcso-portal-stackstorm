@@ -45,13 +45,17 @@ def get_issue_url(api_client, issue_id, portal_url):
     return url
 
 
-def convert_timestamps_to_str(dictionary: dict) -> dict:
-    for k, v in dictionary.items():
-        try:
-            dictionary[k] = v.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-        except AttributeError:
-            pass
-    return dictionary
+def convert_timestamps_to_str(json_element):
+    if isinstance(json_element, dict):
+        for k, v in json_element.items():
+            try:
+                json_element[k] = v.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+            except AttributeError:
+                convert_timestamps_to_str(json_element[k])
+    elif isinstance(json_element, list):
+        for item in json_element:
+            convert_timestamps_to_str(item)
+    return json_element
 
 
 def get_query_string():

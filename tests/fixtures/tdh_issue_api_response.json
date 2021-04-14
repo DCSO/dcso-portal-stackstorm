@@ -1,8 +1,6 @@
 {
-  "data": {
-    "tdh_issue": {
-      "id": "7776bd11-d77f-477c-9972-0c777c5fad18",
-      "isPublished": true
-    }
+  "tdh_issue": {
+    "id": "7776bd11-d77f-477c-9972-0c777c5fad18",
+    "isPublished": true
   }
 }

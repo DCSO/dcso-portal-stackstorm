@@ -1,6 +1,7 @@
 # Copyright (c) 2021, DCSO GmbH
 
 import os
+from typing import Union
 from urllib.parse import urljoin
 
 from dcso.portal import APIClient, PortalAPIError
@@ -36,22 +37,31 @@ def get_issue_url(api_client, issue_id, portal_url):
     url = None
     try:
         response = api_client.execute_graphql_dict(query=q, variables=variables)
-        issue = response["data"]["tdh_issue"]
+        issue = response["tdh_issue"]
         if issue and issue.get("isPublished"):
             url = urljoin(portal_url, f"tdh/issues/{issue_id}")
-    except PortalAPIError:
+    except (PortalAPIError, KeyError):
         pass
 
     return url
 
 
-def convert_timestamps_to_str(dictionary: dict) -> dict:
-    for k, v in dictionary.items():
-        try:
-            dictionary[k] = v.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
-        except AttributeError:
-            pass
-    return dictionary
+def convert_timestamps_to_str(json_element: Union[dict, list]) -> Union[dict, list]:
+    """Converts timestamps in JSON object/array from Python Datetime to str
+
+    This methods recursively iterates through a given JSON object or array and tries to convert every element
+    into a string of the format %Y-%m-%dT%H:%M:%S.%fZ
+    """
+    if isinstance(json_element, dict):
+        for k, v in json_element.items():
+            try:
+                json_element[k] = v.strftime('%Y-%m-%dT%H:%M:%S.%fZ')
+            except AttributeError:
+                convert_timestamps_to_str(json_element[k])
+    elif isinstance(json_element, list):
+        for item in json_element:
+            convert_timestamps_to_str(item)
+    return json_element
 
 
 def get_query_string():

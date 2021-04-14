@@ -9,7 +9,7 @@ from lib.helpers import get_key_client
 
 
 class SetIssueCursor(Action):
-    def run(self, value):
+    def run(self, value=""):
         try:
             key_client = get_key_client()
 

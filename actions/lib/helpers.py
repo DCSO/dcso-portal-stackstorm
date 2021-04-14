@@ -1,6 +1,7 @@
 # Copyright (c) 2021, DCSO GmbH
 
 import os
+from typing import Union
 from urllib.parse import urljoin
 
 from dcso.portal import APIClient, PortalAPIError
@@ -45,7 +46,12 @@ def get_issue_url(api_client, issue_id, portal_url):
     return url
 
 
-def convert_timestamps_to_str(json_element):
+def convert_timestamps_to_str(json_element: Union[dict, list]) -> Union[dict, list]:
+    """Converts timestamps in JSON object/array from Python Datetime to str
+
+    This methods recursively iterates through a given JSON object or array and tries to convert every element
+    into a string of the format %Y-%m-%dT%H:%M:%S.%fZ
+    """
     if isinstance(json_element, dict):
         for k, v in json_element.items():
             try:

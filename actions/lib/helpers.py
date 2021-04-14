@@ -36,10 +36,10 @@ def get_issue_url(api_client, issue_id, portal_url):
     url = None
     try:
         response = api_client.execute_graphql_dict(query=q, variables=variables)
-        issue = response["data"]["tdh_issue"]
+        issue = response["tdh_issue"]
         if issue and issue.get("isPublished"):
             url = urljoin(portal_url, f"tdh/issues/{issue_id}")
-    except PortalAPIError:
+    except (PortalAPIError, KeyError):
         pass
 
     return url

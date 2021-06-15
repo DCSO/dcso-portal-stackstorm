@@ -82,7 +82,7 @@ def get_query_string():
                          alertsTill
                          recommendation
                          taxonomy {
-                           impact { numberAssets entityType potentialAvailabilityImpact threatActorType }
+                           impact { entityType potentialAvailabilityImpact threatActorType }
                            urgency { killchain scope dispersion }
                          }
                          sightings {

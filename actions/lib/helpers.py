@@ -80,19 +80,14 @@ def get_query_string():
                          activeTill
                          alertsFrom
                          alertsTill
-                         recommendation
+                         generalRecommendation
                          taxonomy {
-                           impact { entityType potentialAvailabilityImpact threatActorType }
+                           impact { entityType availabilityImpact threatActorType }
                            urgency { killchain scope dispersion }
                          }
                          sightings {
-                           source
-                           sourceData
-                           attack {
-                             name
-                             description
-                             urls
-                           }
+                           value
+                           type
                          }
                          newestAffectedEntities(limit: 1000) {
                            ...on SensorEntity {

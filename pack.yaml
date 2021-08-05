@@ -2,7 +2,7 @@
 ref: dcso_portal
 name: DCSO Portal
 description: DCSO Portal StackStorm Package
-version: 1.0.0-beta1
+version: 1.0.0-beta2
 author: DCSO GmbH
 email: portal-support@dcso.de
 python_versions:

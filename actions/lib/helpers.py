@@ -81,6 +81,7 @@ def get_query_string():
                          alertsFrom
                          alertsTill
                          generalRecommendation
+                         priority
                          taxonomy {
                            impact { entityType availabilityImpact threatActorType }
                            urgency { killchain scope dispersion }

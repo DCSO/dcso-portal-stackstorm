@@ -18,6 +18,7 @@ class NextIssuesActionTestCase(BaseActionTestCase):
         value = None
 
     def setUp(self):
+        self.maxDiff = None
         self.issues_graphql_response = json.loads(self.get_fixture_content("next_issues_api_response.json"))
         self.tdh_issue_graphql_response = json.loads(self.get_fixture_content("tdh_issue_api_response.json"))
         self.next_issues_plugin_response = json.loads(self.get_fixture_content("next_issues_plugin_response.json"))

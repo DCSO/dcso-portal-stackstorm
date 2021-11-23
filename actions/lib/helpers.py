@@ -73,6 +73,7 @@ def get_query_string():
                      node {
                        ... on AlertIssue {
                          id
+                         title
                          reference
                          organizationUID
                          summary
@@ -89,6 +90,8 @@ def get_query_string():
                          sightings {
                            value
                            type
+                           firstSeen
+                           lastSeen
                          }
                          newestAffectedEntities(limit: 1000) {
                            ...on SensorEntity {

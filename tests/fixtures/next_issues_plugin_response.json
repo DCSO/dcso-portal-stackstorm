@@ -3,6 +3,7 @@
   "nodes": [
     {
       "id": "aaaaaaba-971e-456b-9d9a-54406edc45d9",
+      "title": "Simple test issue",
       "reference": "automatic-TEST---S0199",
       "organizationID": "TEST",
       "summary": "issue ",
@@ -14,6 +15,8 @@
       "taxonomy": null,
       "sightings": [
         {
+          "firstSeen": "2021-02-16T11:49:37.725168Z",
+          "lastSeen":  "2021-02-21T16:17:13.004464Z",
           "source": "testervices-archive.test",
           "sourceData": "Hostname",
           "attack": {
@@ -56,6 +59,7 @@
     },
     {
       "id": "aaaaaaba-971e-456b-9d9a-54406edc45d9",
+      "title": "Simple test issue",
       "reference": "automatic-TEST---S0199",
       "organizationID": "TEST",
       "summary": "issue ",
@@ -67,6 +71,8 @@
       "taxonomy": null,
       "sightings": [
         {
+          "firstSeen": "2021-02-16T11:49:37.725168Z",
+          "lastSeen":  "2021-02-21T16:17:13.004464Z",
           "source": "testervices-archive.test",
           "sourceData": "Hostname",
           "attack": {

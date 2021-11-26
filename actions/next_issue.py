@@ -41,5 +41,6 @@ class NextIssue(Action):
                 result["node"]["portalURL"] = issue_url
         except PortalException as exc:
             result["error"] = str(exc)
+            return False, result
 
-        return result
+        return True, result

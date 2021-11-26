@@ -45,5 +45,6 @@ class NextIssues(Action):
                 results = {"status": "SUCCESS", "nodes": None}
         except PortalException as exc:
             results = {"status": "FAILED", "nodes": None, "error": str(exc)}
+            return False, results
 
-        return results
+        return True, results

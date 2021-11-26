@@ -38,6 +38,7 @@ class NextIssuesActionTestCase(BaseActionTestCase):
         # mock graphql responses for 'issues' query and 'tdh_issue' query
         mock_graphql.side_effect = [self.issues_graphql_response] + 2*[self.tdh_issue_graphql_response]
         # run action -> next_issue
-        result = action.run(2)
+        status, result = action.run(2)
         expected = self.next_issues_plugin_response
         self.assertEqual(result, expected)
+        self.assertEqual(status, True)

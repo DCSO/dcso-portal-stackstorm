@@ -81,6 +81,7 @@ def get_query_string():
                          activeTill
                          alertsFrom
                          alertsTill
+                         situationalAnalysis
                          generalRecommendation
                          priority
                          taxonomy {

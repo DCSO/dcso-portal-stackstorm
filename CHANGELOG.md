@@ -2,6 +2,10 @@
 
 Notable changes to DCSO Portal StackStorm Package.
 
+## [1.1.2] - 2022-05-31
+
+Add `situationalAnalysis` to API query
+
 ## [1.1.1] - 2021-11-26
 
 Fixes the return values of action implementation (#12)
